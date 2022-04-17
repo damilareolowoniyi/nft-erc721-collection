@@ -7,7 +7,7 @@ import '@openzeppelin/contracts/access/Ownable.sol';
 import '@openzeppelin/contracts/utils/cryptography/MerkleProof.sol';
 import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
 
-contract YourNftToken is ERC721A, Ownable, ReentrancyGuard {
+contract DarkKingdomNFT is ERC721A, Ownable, ReentrancyGuard {
 
   using Strings for uint256;
 
@@ -123,6 +123,8 @@ contract YourNftToken is ERC721A, Ownable, ReentrancyGuard {
     cost = _cost;
   }
 
+  // Add new function to set total Supply 
+
   function setMaxMintAmountPerTx(uint256 _maxMintAmountPerTx) public onlyOwner {
     maxMintAmountPerTx = _maxMintAmountPerTx;
   }
@@ -155,10 +157,38 @@ contract YourNftToken is ERC721A, Ownable, ReentrancyGuard {
     // This will pay HashLips Lab Team 5% of the initial sale.
     // By leaving the following lines as they are you will contribute to the
     // development of tools like this and many others.
-    // =============================================================================
-    (bool hs, ) = payable(0x146FB9c3b2C13BA88c6945A759EbFa95127486F4).call{value: address(this).balance * 5 / 100}('');
-    require(hs);
-    // =============================================================================
+
+   // Account splitter 1
+    // uint256 feeOnePercentage = 30;
+    // uint256 feeOneAmount = address(this).balance * feeOnePercentage / 100;
+    // address feeOneAddress = __ACCOUNT_1_ADDRESS__;
+    
+
+    // // Account 2
+    // uint256 feeTwoPercentage = 30;
+    // uint256 feeTwoAmount = address(this).balance * feeTwoPercentage / 100;
+    // address feeTwoAddress = __ACCOUNT_2_ADDRESS__;
+
+    // // Account 3
+    // uint256 feeThreePercentage = 30;
+    // uint256 feeThreeAmount = address(this).balance * feeThreePercentage / 100;
+    // address feeThreeAddress = __ACCOUNT_3_ADDRESS__;
+    
+    
+    // // =============================================================================
+    // (bool bp, ) = payable(feeOneAddress).call{value: feeOneAmount}('');
+    // require(bp);
+
+    // (bool dm, ) = payable(feeTwoAddress).call{value: feeTwoAmount}('');
+    // require(dm);
+
+   // (bool hb, ) = payable(feeThreeAddress).call{value: feeThreeAmount}('');
+    // require(hb);
+
+    // // owner 
+    // (bool os, ) = payable(owner()).call{value: address(this).balance}('');
+    // require(os);
+    // ===================================
 
     // This will transfer the remaining contract balance to the owner.
     // Do not remove this otherwise you will not be able to withdraw the funds.
