@@ -29,7 +29,7 @@ const CollectionConfig: CollectionConfigInterface = {
   contractAddress: "0xa72381cB084829bD33905563CA28d99768D6E7f6",
   marketplaceIdentifier: 'my-nft-token', //make sure to update the marketplace identifier to your opensea collection url name
   marketplaceConfig: Marketplaces.openSea,
-  whitelistAddresses: whitelistAddresses,
+  whitelistAddresses,
 };
 
 export default CollectionConfig;
